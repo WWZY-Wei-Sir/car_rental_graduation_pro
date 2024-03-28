@@ -1,0 +1,55 @@
+spring:
+  thymeleaf:
+    cache: false
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://81.68.223.21:3915/car_rental ? serverTimezone = Asia/Shanghai
+    username: root
+    password: qpalmZ@901
+    # Hikari 连接池配置
+    hikari:
+      minimum-idle: 3  # 最小空闲连接数量
+      maximum-pool-size: 5  # 连接池最大连接数，默认是10
+      max-lifetime: 120000  # 此属性控制池中连接的最长生命周期，值0表示无限生命周期，默认1800000即30分钟
+      connection-test-query: SELECT 1
+
+  redis:
+    host: 81.68.223.21
+    port: 6379
+    password: qpalmZ@901
+    database: 15
+    lettuce:
+      pool:
+        max-idle: 16
+        max-active: 32
+        min-idle: 8
+  mail:
+    # 配置QQ邮件信息
+    host: smtp.163.com
+    # 发送邮件者信箱
+    username: qwer321951493@163.com
+    # IMAP/SMTP服务时邮箱的密文授权码（之前保存的）
+    password: PLGCKWJRXSSLMTCV
+    port: 465
+    properties:
+      mail:
+        debug: true
+        smtp:
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+
+server:
+  port: 8090
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+jwt:
+  JWT_TTL: 7200
+  JWT_KEY: 8022a24e6c50490e9c9d209ebd7b79ba/53b973b9dda647838ea7b06034161898/cf5fbf79=a146=4a70=b0fb=dd82f436e270
+
+files:
+  defaultUrl: defaultPage
+  upload:
+    path: E:/WsirExclusive/_DownloadFiles/
